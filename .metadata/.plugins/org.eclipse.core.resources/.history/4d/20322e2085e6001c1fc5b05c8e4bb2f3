@@ -1,0 +1,17 @@
+package apolis.Day13_June7;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Hello World!");
+		@SuppressWarnings("resource")
+		ApplicationContext context = new ClassPathXmlApplicationContext(
+				"com/apolis/common/context_June7.xml");
+		
+		Robot bender = (Robot) context.getBean("bender");
+		
+		bender.speak();
+	}
+
+}

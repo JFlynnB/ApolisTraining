@@ -1,0 +1,32 @@
+package database;
+
+import java.util.List;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Main {
+
+	public static void main(String[] args) {
+		ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
+		
+		EmployeeJDBCTemplate employeeJDBCTemplate =
+				(EmployeeJDBCTemplate) context.getBean("employeeJDBCTemplate");
+		
+		System.out.println("Creating Records...");
+		employeeJDBCTemplate.create("Joshua", "Billinghurst", 1);
+		employeeJDBCTemplate.create("Yasir", "Tahir", 2);
+		employeeJDBCTemplate.create("Aruna", "Boddu", 3);
+		
+		System.out.println("Listing Records...");
+		List<Employee> employees = employeeJDBCTemplate.listEmployees();
+		
+		for(Employee record : employees) {
+			System.out.print("Name: " + record.getFirstName());
+			System.out.print(" " record.getLastName());
+			System.out.println(", Employee ID : " + record.getEmpID());
+		}
+
+	}
+
+}

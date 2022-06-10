@@ -1,0 +1,20 @@
+package com.apolis.Day15_June9;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+
+@SpringBootApplication
+@ComponentScan("com.apolis.Day15_June9")
+public class HibernateApplication {
+
+	public static void main(String[] args) {
+		ApplicationContext context =
+				SpringApplication.run(HibernateApplication.class, args);
+		CustomerDao table = (CustomerDao) context.getBean("customerDao");
+		Customer cust1 = new Customer("Joshua", "Billinghurst", 8438706691L);
+		table.saveCustomer(cust1);
+	}
+
+}

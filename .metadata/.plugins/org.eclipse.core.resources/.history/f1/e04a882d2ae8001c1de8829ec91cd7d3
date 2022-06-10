@@ -1,0 +1,13 @@
+package com.apolis.Day15_June9;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringOrmImpApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringOrmImpApplication.class, args);
+	}
+
+}

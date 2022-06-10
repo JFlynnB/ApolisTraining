@@ -1,0 +1,23 @@
+package apolis.Day13_June7;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Hello World!");
+		@SuppressWarnings("resource")
+		ApplicationContext context = new ClassPathXmlApplicationContext(
+				"apolis/Day13_June7/context.xml");
+		//implementation of autowiring by name
+		Robot bender = (Robot) context.getBean("bender");
+		bender.speak();
+		
+		//implementation of autowiring by type
+		Car myCar = (Car) context.getBean("myCar");
+		System.out.println(myCar);
+	}
+
+}

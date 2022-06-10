@@ -1,0 +1,8 @@
+package apolis.Day13_June7;
+
+public class Car {
+
+	private CarCompany make;
+	private String model;
+	
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- By Type -->
+	<bean id="myCar" class="apolis.Day13_June7.Car" autowire="byType">
+		<property name="year" value="2004" />
+		<property name="model" value="Matrix" />
+	</bean>
+	<bean id="toyota" class="apolis.Day13_June7.CarCompany">
+		<property name="cName" value="Toyota" />
+		<property name="employees" value="80000" />
+	</bean>
+	<bean id="honda" class="apolis.Day13_June7.CarCompany">
+		<property name="cName" value="Honda" />
+		<property name="employees" value="110000" />
+	</bean>
+
+</beans>

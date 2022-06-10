@@ -1,0 +1,10 @@
+package apolis.Day13Lookup;
+
+public class LookupInjection {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

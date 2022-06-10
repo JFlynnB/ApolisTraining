@@ -1,0 +1,48 @@
+package apolis.Day14Annotations;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component(value="jon")
+public class Teacher {
+	
+	@Value("Jon")
+	private String firstName;
+	@Value("Phillps")
+	private String lastName;
+	@Autowired
+	private Department dept;
+	@Value("40000")
+	private int salary;
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public Department getDept() {
+		return dept;
+	}
+	public void setDept(Department dept) {
+		this.dept = dept;
+	}
+	public int getSalary() {
+		return salary;
+	}
+	public void setSalary(int salary) {
+		this.salary = salary;
+	}
+	@Override
+	public String toString() {
+		return firstName + " " + lastName + ", from " + dept;
+	}
+	
+	
+}

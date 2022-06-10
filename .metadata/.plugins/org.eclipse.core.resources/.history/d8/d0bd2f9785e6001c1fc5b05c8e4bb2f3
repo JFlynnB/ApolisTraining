@@ -1,0 +1,20 @@
+package apolis.Day13_June7;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Hello World!");
+		@SuppressWarnings("resource")
+		ApplicationContext context = new ClassPathXmlApplicationContext(
+				"apolis/common/context_June7.xml");
+		
+		Robot bender = (Robot) context.getBean("bender");
+		
+		bender.speak();
+	}
+
+}

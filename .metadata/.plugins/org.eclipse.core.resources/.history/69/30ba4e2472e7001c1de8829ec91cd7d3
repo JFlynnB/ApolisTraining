@@ -1,0 +1,40 @@
+package polis.Day14.Questions;
+
+/*
+ * Question 12 : Search an element in rotated and sorted array.
+ */
+public class Question12 {
+
+	public static void main(String[] args) {
+		
+		int[] array = {6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1, 2, 3, 4, 5};
+		
+		int lookingFor = 10;
+		
+		int pivot = findPivot(array);
+		int foundAt = binarySearch(array, 0, pivot - 1, lookingFor); //search array before pivot
+		if(foundAt == -1) {
+			foundAt = binarySearch(array, pivot, array.length - 1, lookingFor); //search after pivot
+		}
+		System.out.print(lookingFor + " has been found in the array at index " + foundAt);
+	}
+	//find the index where the array becomes a sorted subarray.
+	public static int findPivot(int[] array) {
+		int value = array[0];
+		for(int i = 1; i < array.length; i++) {
+			if(array[i] <= value)
+				return i;
+		}
+		return array.length - 1;
+	}
+	//Standard Binary Search logic
+	public static int binarySearch(int[] array, int from, int to, int key) {
+		if(to < from) {return -1;}     //base case if key cannot be found
+		int mid = (from + to) /2;
+		if(array[mid] == key) {return mid;} //FOUND IT!
+		if(key < array[mid]) {
+			return binarySearch(array, from, mid - 1, key);
+		}
+		return binarySearch(array, mid + 1, to, key);
+	}
+}

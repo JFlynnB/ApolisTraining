@@ -1,0 +1,37 @@
+package apolis.Day13_Part2;
+
+public class Teacher {
+	
+	private String firstName;
+	private String lastName;
+	private Department dept;
+
+	public Teacher(Department dept) {
+		this.dept = dept;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	@Override
+	public String toString() {
+		return "Teacher [firstName=" + firstName + ", lastName=" + lastName +
+				", dept=" + dept.getDeptName() + "]";
+	}
+	
+}
+
+

@@ -1,0 +1,48 @@
+package com.apolis.Day15_June9;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="customer")
+public class Customer {
+	@Column(name="firstName")
+	private String firstName;
+	@Column(name="lastName")
+	private String lastName;
+	@Id
+	@Column(name="Phone_Number")
+	private Long phoneNumber;
+	
+	public Customer(String firstName, String lastName, Long phoneNumber) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.phoneNumber = phoneNumber;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public Long getPhoneNumber() {
+		return phoneNumber;
+	}
+	public void setPhoneNumber(Long phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+	@Override
+	public String toString() {
+		return "Customer [firstName=" + firstName + ", lastName=" + lastName + ", phoneNumber=" + phoneNumber + "]";
+	}
+	
+	
+}

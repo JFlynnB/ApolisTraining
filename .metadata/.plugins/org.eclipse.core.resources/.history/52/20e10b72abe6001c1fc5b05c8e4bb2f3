@@ -1,0 +1,15 @@
+package apolis.Day13Lookup;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Customer {
+	@Value("firstname")
+	private String firstName;
+	@Value("lastname")
+	private String lastName;
+	
+	
+
+}

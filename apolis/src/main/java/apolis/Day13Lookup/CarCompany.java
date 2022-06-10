@@ -1,0 +1,22 @@
+package apolis.Day13Lookup;
+
+public class CarCompany {
+	private String companyName;
+	private int yearFounded;
+	public String getCompanyName() {
+		return companyName;
+	}
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+	public int getYearFounded() {
+		return yearFounded;
+	}
+	public void setYearFounded(int yearFounded) {
+		this.yearFounded = yearFounded;
+	}
+	@Override
+	public String toString() {
+		return companyName + " Motor company, founded in " + yearFounded;
+	}
+}

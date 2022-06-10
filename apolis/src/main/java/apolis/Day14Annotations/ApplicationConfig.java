@@ -1,0 +1,36 @@
+package apolis.Day14Annotations;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@ComponentScan(basePackages="apolis.Day14Annotations")
+public class ApplicationConfig {
+	
+	@Bean
+	public Student student1() {
+		Student student = new Student();
+		student.setFirstName("Joshua");
+		student.setLastName("Billinghurst");
+		student.setGpa(3.85);
+		return student;
+	}
+	                 //Creating 2 different beans for the same class
+	@Bean
+	public Student student2() {
+		Student student = new Student();
+		student.setFirstName("Carson");
+		student.setLastName("Brown");
+		student.setGpa(3.95);
+		return student;
+	}
+	
+	@Bean
+	public Department dept() {
+		Department dept = new Department();
+		dept.setDeptName("Computer Science");
+		dept.setBudget(150000);
+		return dept;
+	}
+}

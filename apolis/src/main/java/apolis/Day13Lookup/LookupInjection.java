@@ -1,0 +1,28 @@
+package apolis.Day13Lookup;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class LookupInjection {
+
+	public static void main(String[] args) {
+
+		@SuppressWarnings("resource")
+		ApplicationContext context = new ClassPathXmlApplicationContext(
+				"apolis/Day13Lookup/context-look.xml");
+		
+		BatteryBuilder batbuild = (BatteryBuilder) context.getBean("batterybuilder");
+		
+		Battery bat1 = batbuild.getLithium();
+		System.out.println(bat1.toString());
+		
+		Battery bat2 = batbuild.getNiMH();
+		System.out.println(bat2.toString());
+		
+		System.out.println("\nThis Car contains annotated and configured beans");
+		
+		Car myCar = (Car) context.getBean("myCar");
+		System.out.println(myCar.toString());
+	}
+
+}

@@ -1,0 +1,33 @@
+package com.apolis.Day15_June9;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+public class CustomerDao {
+	
+	private SessionFactory factory;
+	
+	public void setFactory(SessionFactory factory) {
+		this.factory = factory;
+	}
+	
+	public void saveCustomer(Customer cust) {
+		Session session = factory.openSession();
+		Transaction trans = session.beginTransaction();
+		session.save(cust);
+		trans.commit();
+		session.close();
+		System.out.println("Customer saved successfully.");
+	}
+	
+	public Customer getByPhoneNumber(Long key) {
+		Session session = factory.openSession();
+		//Transaction transaction = session.beginTransaction();
+		Customer cust = session.get(Customer.class, key);
+		session.close();
+		if(cust == null)
+			System.out.println("A customer with that phone number was not found.");
+		return cust;
+	}
+}

@@ -1,0 +1,18 @@
+package polis.Day14.Questions;
+
+/*
+ * Question 10 : Write java Program to Find Smallest and Largest Element in an Array.
+ */
+public class Question10 {
+
+	public static void main(String[] args) {
+		
+		int[] array = {22, 31, 4, 8, 15, 55, 16, 23, 42};
+		
+		int largest = 0;
+		int smallest = 0;
+		
+		
+	}
+
+}

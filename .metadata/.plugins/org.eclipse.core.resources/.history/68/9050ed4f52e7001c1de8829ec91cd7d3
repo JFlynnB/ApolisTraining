@@ -1,0 +1,53 @@
+package apolis.Day14Annotations;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Required;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Classroom {
+
+	@Autowired
+	private Teacher teacher;
+	@Autowired(required=false)   //It will search for an appropriate bean of Student type, but will set to null if one is not found
+	@Qualifier("student2")      //It will look specifically for a bean with id="student2"
+	private Student student;     //In a real application, this would be a list of students
+	@Value("204")
+	private int roomNumber;
+	@Autowired              //@Required will be set on the setter method
+	@Qualifier("mathDept")
+	private Department dept;
+	public Teacher getTeacher() {
+		return teacher;
+	}
+	public void setTeacher(Teacher teacher) {
+		this.teacher = teacher;
+	}
+	public Student getStudent() {
+		return student;
+	}
+	public void setStudent(Student student) {
+		this.student = student;
+	}
+	public int getRoomNumber() {
+		return roomNumber;
+	}
+	public void setRoomNumber(int roomNumber) {
+		this.roomNumber = roomNumber;
+	}
+	public Department getDept() {
+		return dept;
+	}
+	//@Required
+	public void setDept(Department dept) {
+		this.dept = dept;
+	}
+	@Override
+	public String toString() {
+		return teacher + " and " + student + " meet in room " + roomNumber + " to learn " + dept;
+	}
+	
+	
+}

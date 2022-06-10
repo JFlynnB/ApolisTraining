@@ -1,0 +1,47 @@
+package database.jdbc;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class EmployeeJDBCTemplate implements EmployeeDAO{
+	
+	@Autowired
+	private JdbcTemplate jdbcTemplateObject;
+
+
+	public void create(String firstName, String lastName, Integer empID) {
+		String sql = "INSERT INTO employee (lastName, firstName, empID) VALUES (?, ?, ?)";
+		jdbcTemplateObject.update(sql, lastName, firstName, empID);
+		System.out.println("Created record fName="+firstName+", lName="+lastName+", empID="+ empID);
+	}
+
+	public Employee getEmployee(Integer id) {
+		String sql = "SELECT * FROM employee WHERE empID = ?";
+		@SuppressWarnings("deprecation")
+		Employee employee = jdbcTemplateObject.queryForObject(sql,  new Object[] {id}, new EmployeeMapper());
+		return employee;
+	}
+
+	public List<Employee> listEmployees() {
+		String sql = "SELECT * FROM employee";
+		List<Employee> employees = jdbcTemplateObject.query(sql, new EmployeeMapper());
+		return employees;
+	}
+
+	public void delete(Integer id) {
+		String sql = "DELETE FROM employee WHERE empID = ?";
+	    jdbcTemplateObject.update(sql, id);
+	    System.out.println("Deleted Record with Employee ID = " + id );
+	}
+
+	public void update(Integer id, String firstName) {
+		String sql = "UPDATE employee SET firstName = ? WHERE empID = ?";
+	    jdbcTemplateObject.update(sql, firstName, id);
+	    System.out.println("Updated Record with ID = " + id );
+	}
+
+}

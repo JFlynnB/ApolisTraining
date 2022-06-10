@@ -1,0 +1,42 @@
+package com.apolis.Question13;
+
+/*
+ * Question 13 : Find minimum element in a sorted and rotated array.
+ */
+public class FindMin {
+
+	public static void main(String[] args) {
+		
+		int[] array = {6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1, 2, 3, 4, 5};
+		
+		int mid = array[array.length / 2];
+		int answer = -1;
+		
+		if(array[0] + array[mid] < array[mid] + array[array.length - 1]) {
+			answer = customBinary(array, mid, array.length - 1);
+		}else {
+			answer = customBinary(array, 0, mid);
+		}
+		System.out.println(answer);
+	}
+	
+	public static int customBinary(int[] array, int start, int end) {
+		int mid = (start + end) / 2;
+		if(array[start] == array[end])
+			return array[start];
+		if (mid > start && array[mid] < array[mid - 1])
+            return array[mid];
+		if(array[mid] < array[end]) {
+			if(array[start] < array[mid]) {
+				return customBinary(array, start + 1, mid);
+			}else {
+				return customBinary(array, mid, end - 1);
+			}
+		}else {
+			
+		}
+		
+		return -1;
+	}
+
+}

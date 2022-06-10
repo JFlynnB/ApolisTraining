@@ -1,0 +1,30 @@
+package polis.Day14.Questions;
+
+/*
+ * Question 11 : Find missing number in the array.
+ */
+public class Question11 {
+
+	public static void main(String[] args) {
+		
+		int[] array = {1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12};  //an array from which a single element is missing
+		int missingNo = -2147483648;
+		//find missing number in the array
+		
+		int shouldBeNext = array[0] + 1;
+		for(int i = 1; i < array.length; i++) {
+			if(array[i] == shouldBeNext) {
+				shouldBeNext++;
+				continue;
+			}else {
+				missingNo = shouldBeNext;
+				shouldBeNext = array[i] + 1;
+			}
+		}
+		if(missingNo != -2147483648)
+			System.out.println("The missing element is " + missingNo);
+		else
+			System.out.println("The array contained no missing elements");
+	}
+
+}

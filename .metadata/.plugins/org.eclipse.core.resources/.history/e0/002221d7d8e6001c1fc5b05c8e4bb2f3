@@ -1,0 +1,12 @@
+package apolis.Day13_Part2;
+
+public class ClassRoom {
+	
+	private Teacher instructor;
+	private Student pupil;
+	private int roomNumber;
+	
+	
+	
+
+}

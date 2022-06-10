@@ -1,0 +1,25 @@
+package apolis.Day13_June7;
+
+public class LithiumBattery implements Battery{
+		
+		private int capacity;
+		
+		private int currentCharge;
+
+
+		public int getCapacity() {
+			return capacity;
+		}
+
+		public void setCapacity(int capacity) {
+			this.capacity = capacity;
+		}
+
+		public int getCurrentCharge() {
+			return currentCharge;
+		}
+
+		public void setCurrentCharge(int currentCharge) {
+			this.currentCharge = currentCharge;
+		}
+}

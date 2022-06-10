@@ -1,0 +1,19 @@
+package apolis.Day13Annotations;
+
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class AnnotationTest {
+
+	public static void main(String[] args) {
+		
+		@SuppressWarnings("resource")
+		BeanFactory factory = new AnnotationConfigApplicationContext(
+				apolis.Day13Annotations.ApplicationConfig.class);
+		
+		Company myCompany = (Company) factory.getBean(Company.class);
+		
+		System.out.println(myCompany);
+	}
+
+}

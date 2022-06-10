@@ -1,0 +1,9 @@
+package apolis.Day13_Part2;
+
+public class Student {
+	
+	private String firstName;
+	private String lastName;
+	
+	
+}

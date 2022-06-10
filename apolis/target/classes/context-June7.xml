@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- By Name -->
+	<bean id="bender" class="apolis.Day13_June7.BendingUnit" autowire="byName">   
+		<property name="serialNumber" value="696969" />
+		<property name="favoriteColor" value="aquamarine" />
+	</bean>
+	<bean id="myBattery" class="apolis.Day13_June7.LithiumBattery">
+		<property name="capacity" value="500000"/>
+		<property name="currentCharge" value="250000" />
+	</bean>
+
+</beans>

@@ -1,0 +1,22 @@
+package apolis.Day13_June7;
+
+public class CarCompany {
+
+	private String cName;
+	private int employees;
+	
+	public String getcName() {
+		return cName;
+	}
+	public void setcName(String cName) {
+		this.cName = cName;
+	}
+	public int getEmployees() {
+		return employees;
+	}
+	public void setEmployees(int employees) {
+		this.employees = employees;
+	}
+	
+	
+}

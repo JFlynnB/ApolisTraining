@@ -1,0 +1,10 @@
+package apolis.Day14Annotations;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@ComponentScan(basePackages="apolis.Day14Annotations")
+public class ApplicationConfig {
+
+}
